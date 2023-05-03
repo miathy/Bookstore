@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://wwww.w3.org/1999/xhtml">
+<head th:fragment="common-header">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+<title>Mai's Bookstore</title>
+
+<!-- Bootstrap core CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/non-responsive.css" rel="stylesheet" />
+
+<!-- Custom styles for this template -->
+<link href="/css/style.css" rel="stylesheet" />
+
+<link rel="icon" href="/image/applie-touch-icon.png" />
+</head>
+
+<body>
+	<div th:fragment="navbar">
+		<div class="page-top"
+			style="width: 100%; height: 20px; background-color: #f46b42;"></div>
+		<!-- Static navbar -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">Mai's Bookstore</a>
+				</div>
+				<div id="navbar">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="dropdown"><a href="#" class="dropdown-toggle"
+							data-toggle="dropdown" role="button" aria-haspopup="true"
+							aria-expanded="false">Books <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Browse the bookshelf</a></li>
+								<li><a href="#">Store hours &#38; Directions</a></li>
+								<li><a href="#">FAQ</a></li>
+
+							</ul></li>
+						<form class="navbar-form">
+							<div class="form-group">
+								<input type="text" name="keyword" class="form-control"
+									placeholder="Book title" />
+							</div>
+							<button type="submit" class="btn btn-default">Search</button>
+						</form>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#">SHOPPING CART</a></li>
+						<li><a th:href="@{/Login}">MY ACCOUNT</a></li>
+						<li><a href="#">LOG OUT</a></li>
+					</ul>
+				</div>
+				<!--/.nav-collapse -->
+			</div>
+			<!--/.container-fluid -->
+		</nav>
+		</div>
+		<div th:fragment="body-bottom-scripts">
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+		</div>
+		<body />
+</html>
