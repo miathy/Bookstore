@@ -7,6 +7,8 @@ import java.util.UUID;
 
 import jakarta.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -50,10 +52,6 @@ public class HomeController {
 	public String index() {
 		return "index";
 	}
-//	@RequestMapping("/myAccount")
-//	public String myAccount() {
-//		return "myAccount";
-//	}
 	
 
 	@RequestMapping("/login")
@@ -113,7 +111,13 @@ public class HomeController {
 		
 		SimpleMailMessage email = mailConstructor.constructResetTokenEmail(appUrl, request.getLocale(), token, user, password);
 		
-		mailSender.send(email);
+		try {
+			mailSender.send(email);
+		}
+		catch (Exception e) {
+		      System.out.println("Something went wrong.");
+		
+		}
 		
 		model.addAttribute("emailSent", "true");
 		

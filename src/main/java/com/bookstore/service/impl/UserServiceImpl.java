@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService {
 		
 		if(localUser != null) {
 			LOG.info("user {} already exists. Nothing will be done", user.getUsername());
-//			throw new Exception("user already exists. Nothing will be done");
+
 		} else {
 			for (UserRole ur : userRoles) {
 				roleRepository.save(ur.getRole());
