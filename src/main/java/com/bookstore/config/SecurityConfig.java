@@ -35,7 +35,8 @@ public class SecurityConfig  {
 			"/js/**",
 			"/image/**",
 			"/",
-			"/myAccount"
+			"/newUser",
+			"/forgetPassword"
 	};
 	
 	@Bean

@@ -16,6 +16,8 @@ import jakarta.persistence.Table;
 public class UserRole {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
+	
+	
 	private Long userRoleId;
 	
 	public Long getUserRoleId() {
@@ -49,6 +51,8 @@ public class UserRole {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name="role_id")
 	private Role role;
+	
+	public UserRole() {}
 	
 	public UserRole(User user, Role role) {
 		this.user = user;
